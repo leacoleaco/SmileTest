@@ -1,5 +1,6 @@
 package pro.leaco.smiletest
 
+import mu.KotlinLogging
 import pro.leaco.smiletest.data.MnistReader.getImages
 import pro.leaco.smiletest.data.MnistReader.getLabels
 import smile.feature.extraction.pca
@@ -10,12 +11,17 @@ import java.nio.file.Paths
 
 
 object MinistWithTsne {
+
+    private val logger = KotlinLogging.logger { }
+
     @JvmStatic
     fun main(args: Array<String>) {
 
         val projectDir = System.getProperty("user.dir")
 
         val path = "${projectDir}/src/main/resources/data/minist"
+
+        logger.info { "Loading data from $path" }
 
         val label = getLabels(Paths.get(path, "train-labels-idx1-ubyte.gz"))
         val images = getImages(Paths.get(path, "train-images-idx3-ubyte.gz"))

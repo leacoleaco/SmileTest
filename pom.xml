@@ -45,6 +45,10 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <languageVersion>2.0</languageVersion>
+                    <apiVersion>2.0</apiVersion>
+                </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -88,6 +92,12 @@
             <groupId>com.github.haifengl</groupId>
             <artifactId>smile-core</artifactId>
             <version>3.1.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.github.haifengl</groupId>
@@ -112,7 +122,26 @@
             <groupId>io.github.ollama4j</groupId>
             <artifactId>ollama4j</artifactId>
             <version>1.0.78</version>
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.slf4j</groupId>-->
+<!--                    <artifactId>slf4j-api</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
         </dependency>
+
+        <dependency>
+            <groupId>io.github.microutils</groupId>
+            <artifactId>kotlin-logging</artifactId>
+            <version>1.8.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.4.6</version>
+        </dependency>
+
     </dependencies>
 
 </project>
