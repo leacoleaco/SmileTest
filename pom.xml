@@ -100,6 +100,13 @@
             <version>3.1.1</version>
         </dependency>
 
+        <!--控制台命令行-->
+        <dependency>
+            <groupId>me.tongfei</groupId>
+            <artifactId>progressbar</artifactId>
+            <version>0.9.5</version>
+        </dependency>
+
         <!--ollama 调用 https://ollama4j.github.io/ollama4j/-->
         <dependency>
             <groupId>io.github.ollama4j</groupId>
