@@ -50,9 +50,14 @@ object MinistWithTsne {
 
         //t-SNE降维, 降到2维，条件分布的困惑度为 20.0, 学习率为200 ,迭代次数为1000
         //see: https://haifengl.github.io/manifold.html
-        val tsne = TSNE(x50, 3, 20.0, 200.0, 1000)
+        val tsne = TSNE(x50, 2, 20.0, 200.0, 1000)
         val canvas = ScatterPlot.of(tsne.coordinates, y, '@').canvas();
-        canvas.setTitle("t-SNE of MNIST");
+        canvas.setTitle("t-SNE of MNIST, perplexity=20.0, learning rate=200.0, iteration=1000");
         canvas.window();
+
+        val tsne2 = TSNE(x50, 2, 20.0, 100.0, 2000)
+        val canvas2 = ScatterPlot.of(tsne2.coordinates, y, '@').canvas();
+        canvas2.setTitle("t-SNE of MNIST, perplexity=20.0, learning rate=100.0, iteration=2000");
+        canvas2.window();
     }
 }
